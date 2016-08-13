@@ -1,0 +1,42 @@
+def quicksort(arr, left, right):
+
+      pivot = arr[(left + right)/2]
+
+      partition(arr, left, right)
+
+      quicksort(arr, left, pivot-1)
+
+      quicksort(arr, pivot+1, right)
+
+
+def partition(arr, left, right)
+
+      while(left <= right) 
+
+            while(arr[left] <= pivot)   i++
+
+            while(arr[right] > pivot)  j--
+
+            if(left <= right)  swap(arr[left], arr[right])
+
+
+•Worst case: pivot is the smallest/largest element, then one of the partition is empty. Then need repeat recursively for n-1 elements. 
+
+
+T(n) = T(i) + T(n-i-1) + cn
+
+T(i): sort left part i elements
+
+T(n-i-1): sort right part
+
+cn: partition
+
+Using telescoping => T(n) = O(n^2)
+
+
+•Best case: pivot is the median
+
+
+T(n) = 2T(n/2) + cn
+
+Using master theorem => T(n) = O(nlogn)
